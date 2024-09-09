@@ -1,0 +1,2207 @@
+1 
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+      //  Scanner sc=next Scanner(System.in);
+        int a=4;
+        int b=9;
+        int c=10;
+        if(a>b||a>c)
+            System.out.println("a is bigger " +a);
+        else if(b>a||b>c)
+        System.out.println("b is bigger " +b);
+        else
+          System.out.println("c is bigger "+c);
+       
+        
+   
+       
+    }
+}
+
+
+
+2
+package com.company;
+
+import java.util.Scanner;
+public class Qes1 {
+    public static void main(String[] args) {
+        int n=133683;
+        int count=0;
+        while(n>0)
+        {
+            int rem=n%10;
+            if(rem==3)
+            {
+                count++;
+            }
+            n=n/10;
+        }
+        System.out.println(count);
+    }
+}
+
+
+3//reverse number
+package com.company;
+import java.util.Scanner;
+
+public class Reversenum {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter num");
+        int n=sc.nextInt();
+        int rev=0;
+        int rem;
+        while(n>0)
+        {
+            rem=n%10;
+            rev=rem+rev*10;
+            n=n/10;
+
+        }
+        System.out.println(rev);
+
+
+    }
+}
+
+
+
+4
+package com.company;
+import java.util.Scanner;
+
+public class Operator {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int ans=0;
+        while(true)
+        {
+            System.out.println("enter thr operator: ");
+            char op=sc.next().trim().charAt(0);
+            if(op=='+'||op=='-'||op=='*'||op=='/'||op=='%')
+            {
+                System.out.println("enter two nums");
+                int n1=sc.nextInt();
+                int n2=sc.nextInt();
+                if(op=='+')
+                {
+                    ans=n1+n2;
+                }
+                if(op=='-')
+                {
+                    ans=n1-n2;
+                }
+                if(op=='*')
+                {
+                    ans=n1*n2;
+                }
+                if(op=='/')
+                {
+                    if(n2!=0) {
+                        ans = n1 /n2;
+                    }
+                }
+                if(op=='%')
+                {
+                    ans=n1%n2;
+                }
+            }
+            else if(op=='x'||op=='X'){
+                break;
+            }else
+            {
+                System.out.println("invalid input");
+            }
+            System.out.println(ans);
+        }
+    }
+}
+otput
+enter thr operator: 
++
+enter two nums
+8 6
+14
+
+
+5 
+//swaping 2 nums
+package com.company;
+
+public class Swapfun {
+    public static void main(String[] args) {
+        swap(8,7);
+        
+    }
+    static void swap(int a,int b)
+    {
+        int temp=a;
+        a=b;
+        b=temp;
+        System.out.println(a +" ," +b);
+    }
+}
+
+6
+package com.company;
+import java.util.*;
+public class Changevalue {
+    public static void main(String[] args) {
+        int[] arr={2,6,8,1};
+        change(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void change(int[] num) {
+        num[0] = 87;
+    }
+}
+
+7
+package com.company;
+
+public class Shadowing {
+    static int x=90;//this will be shadow at line 9
+    //variable with hier level scope is hidden.
+    public static void main(String[] args) {
+        System.out.println(x);
+        int x=45;
+        System.out.println(x);
+        fun();
+
+    }
+    static void fun()
+    {
+        System.out.println(x);
+    }
+
+}
+
+8
+//cheking pime number
+package com.company;
+
+import java.util.*;
+public class Qes2 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        boolean ans=isPrime(n);
+        System.out.println(ans);
+    }
+    static boolean isPrime(int n)
+    {
+        if(n<=1)
+        {
+            return false;
+        }
+        int c=2;
+        while(c*c<=n)
+        {
+            if(n%c==0) {
+                return false;
+            }
+            c++;
+        }
+        return c*c>n;
+    }
+
+
+}
+
+9.
+//armstrong nuber
+package com.company;
+
+public class Armstrongnum {
+    public static void main(String[] args) {
+        Arms(153);
+    }
+
+    static void Arms(int a) {
+        int rem = 0;
+        int origin=a;
+        int sum = 0;
+        while (a > 0) {
+            rem = a % 10;
+            sum = sum + (rem * rem * rem);
+            a = a / 10;
+        }
+        System.out.println(sum);
+        if (sum==origin) {
+            System.out.println("it is armstrong num");
+        } else {
+            System.out.println("not ");
+        }
+
+
+    }
+}
+
+10
+//fibonachi seris using recursion
+import java.util.*;
+
+public class Solution {
+
+    public static int fibonacci(int n) {
+        // Complete the function.
+       
+       if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      
+      
+    }
+
+    
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        scanner.close();
+        System.out.println(fibonacci(n));
+    }
+}
+11
+//power of two
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        if(n==1)
+        return true;
+        if(n<1)
+        return false;
+        while(n>1)
+        {
+            if(n%2!=0)
+            {
+                return false;
+            }
+            n=n/2;
+        }
+        return true;
+
+        
+    }
+}
+//output
+Input: n = 16
+Output: true
+Explanation: 24 = 16
+
+Input: n = 3
+Output: false
+
+12
+//power of 3
+class Solution {
+    public boolean isPowerOfThree(int n) {
+        if(n==1)
+        return true;
+        if(n<1)
+        return false;
+        while(n>1)
+        {
+            if(n%3!=0)
+            {
+            return false;
+            }
+             n=n/3;
+        }
+      return true; 
+        
+    }
+Input: n = 27
+Output: true
+Explanation: 27 = 33
+
+Input: n = 0
+Output: false
+Explanation: There is no x where 3x = 0
+
+13
+import java.util.*;
+
+public class Solution {
+
+    public static int fibonacci(int n) {
+        // Complete the function.
+        if(n<=1)
+        {
+            return n;
+        }
+        return fibonacci(n-1)+fibonacci(n-2);
+      
+      s
+    }
+
+    
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        scanner.close();
+        System.out.println(fibonacci(n));
+    }
+}
+
+14
+//fibonachi using dynamic memory 
+import java.util.*;
+
+public class Solution {
+
+    public static int fibonacci(int n,int[] dp) {
+        // Complete the function.
+        if(n<2)
+        return n;
+        
+      if(dp[n]!=-1)
+      return dp[n];
+        return fibonacci(n-1,dp)+fibonacci(n-2,dp);
+      
+      
+    }
+
+    
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] dp=new int[n+1];
+        Arrays.fill(dp,-1);
+        dp[0]=0;
+        dp[1]=1;
+        scanner.close();
+        System.out.println(fibonacci(n,dp));
+    }
+}
+
+14
+//arrays basics
+package com.company;
+import java.util.*;
+public class Array {
+    public static void main(String[] args) {
+        //array of primitives
+        Scanner in =new Scanner(System.in);
+        int[] a=new int[5];
+        a[0]=23;
+        a[1]=98;
+        a[2]=34;
+        a[3]=66;
+        a[4]=88;
+
+
+        //for each loop
+       for(int num:a)
+        {
+            System.out.println(num+ " ");
+        }
+
+//tostring is method when ever we give arry to it ,it converts it to string
+       System.out.println(Arrays.toString(a));
+       
+       
+        //array of objects
+        String[] str=new String[4];
+        for(int i=0;i<str.length;i++)
+        {
+            str[i]=in.next();
+        }
+        System.out.println();
+
+        //modify
+        str[1]="sharada";
+        System.out.println(Arrays.toString(str));
+    }
+
+}
+
+15
+//ARRAY
+package com.company;
+import java.util.*;
+public class Passinginfun {
+    public static void main(String[] args) {
+        int[] nums={3,8,9,2,4};
+        System.out.println(Arrays.toString(nums));
+        change(nums);
+        System.out.println(Arrays.toString(nums));
+
+    }
+    static void change(int[] arr)
+    {
+        arr[0]=99;
+    }
+}
+
+16
+//2D ARRAYS
+package com.company;
+
+import java.util.*;
+public class TwoDarray {
+    public static void main(String[] args) {
+
+        Scanner in =new Scanner(System.in);
+        int[][] arr=new int[3][3];
+        System.out.println(arr.length);
+    //input
+        for(int row=0;row<arr.length;row++)
+            for(int col=0;col<arr[row].length;col++) {
+                arr[row][col] = in.nextInt();
+            }
+
+
+        //output
+        for(int row=0;row<arr.length;row++) {
+            for (int col = 0; col < arr[row].length; col++) {
+                System.out.print(arr[row][col] + " ");
+            }
+            System.out.println();
+        }
+
+       
+    }
+}
+
+17
+package com.company;
+
+public class Array2 {
+    public static void main(String[] args) {
+        int[][] arr={
+                {2,1,3,4},
+                {5,7,1},
+                {7,8,3}
+        };
+        for(int row=0;row<arr.length;row++)
+        {
+            for(int col=0;col<arr[row].length;col++)
+            {
+                System.out.print(arr[row][col]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+18
+//ARRAY LIST
+package com.company;
+import java.util.*;
+public class Arraylists {
+    public static void main(String[] args) {
+        //syntax
+       ArrayList<Integer> list=new ArrayList<>(10);
+       list.add(67);
+        list.add(876);
+        System.out.println(list +" ");
+        System.out.println(list.contains(8765));
+        System.out.println(list.contains(67));
+        list.set(1,8987657);
+        System.out.println(list +" ");
+
+
+    }
+}
+outputs
+[67, 876] 
+false
+true
+[67, 8987657] 
+
+
+19
+package com.company;
+import java.util.*;
+public class Arraylists {
+    public static void main(String[] args) {
+        //syntax
+        Scanner in=new Scanner(System.in);
+
+       ArrayList<Integer> list=new ArrayList<>(10);
+
+        //input
+        for(int i=0;i<5;i++)
+        {
+            list.add(in.nextInt());
+        }
+       //output
+        for(int i=0;i<5;i++)
+        {
+            System.out.println(list.get(i));
+        }
+
+        System.out.println(list);
+    }
+}
+
+output
+7 6 2 1 9
+7
+6
+2
+1
+9
+[7, 6, 2, 1, 9]
+
+
+
+20
+//MISSING ELEMENT IN THE ARRAY
+class Solution {
+    public int missingNumber(int[] nums) {
+
+      int n = nums.length;
+        boolean[] check = new boolean[nums.length + 1];
+        for (int num : nums) {
+            check[num] = true;
+        }
+        for (int i = 0; i < n; i++) {
+            if (!check[i]) {
+                return i;
+            }
+        }
+        return n;
+        
+    }
+}
+
+//OR
+import java.io.*;
+import java.util.*;
+
+// Driver Code
+ 
+public class Missing {
+    public static void main(String[] args) {
+        int arr[] = { 1, 3, 4, 5, 6, 7 };
+        int n = arr.length;
+        int[] num = new int[n + 1]; // Increase size by 1 to accommodate the missing number
+
+        for (int val : arr) {
+            num[val] = val;
+        }
+
+        for (int i = 1; i <= n; i++) { // Start from 1 as we're skipping 0 in this approach
+            if (arr[i - 1] != num[i]) {
+                System.out.println(num[i]);
+                break;
+            }
+        }
+    }
+}
+21
+//DISPLAY OF INDEXT OF SUM OF 2 NOS IN ARRY
+import java.io.*;
+import java.util.*;
+
+// Driver Code
+public class Tosum {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4};
+        int target = 3;//it may change.s
+        Sum(arr, target);
+    }
+
+    public static void Sum(int[] arr, int target) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] + arr[j] == target) {
+                    System.out.print("[" + i + "," + j + "] ");
+                }
+            }
+        }
+    }
+}
+//OUTPUT
+[0,1] 
+
+
+22
+
+//TOSUM
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        int n=nums.length;
+        for(int i=0;i<n-1;i++){
+            for(int j=i+1;j<n;j++)
+            {
+                if(nums[i]+nums[j]==target){
+                    return  new int[]{i,j};
+                }
+            }
+        }
+
+         return new int[]{};
+
+    }
+}
+//OUTPUT
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+
+23
+//STRING
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+       String fname="sharada";
+       String lname="patil";
+       System.out.println(fname+" "+lname);
+        System.out.println(fname.length()+" "+lname.length());
+        for(int i=0;i<fname.length();i++)
+        {
+            System.out.println(fname.charAt(i));
+        }
+ System.out.println(name.substring(0,4));
+    }
+}
+
+//OUTPUT
+sharada patil
+7 5
+s
+h
+a
+r
+a
+d
+a
+
+shar
+
+24
+//// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+       String str="123";
+       int num=Integer.parseInt(str);
+       int s=9876;
+       System.out.println(num);
+     String no=Integer.toString(s);
+       System.out.println(no);
+    }
+}
+
+25
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+      String arr[]=new String[5];
+      int sum=0;
+      Scanner sc=new Scanner(System.in);
+      System.out.println("enter 5 string");
+      for(int i=0;i<5;i++)
+      {
+           arr[i]=sc.next();
+            sum=sum+arr[i].length();
+      }
+      System.out.println("sum="+sum);
+    }
+}
+
+//OUTPUT
+enter 5 string
+abcf
+sharada
+patil
+iuyt
+akash
+sum=25
+
+
+26
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter string:");
+        String name = sc.next();
+          String res = name.replace('e', 'i');
+        System.out.println(res);
+    }
+}
+
+OR
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter string:");
+         String name=sc.next();
+     char[] charArray = name.toCharArray();
+     for(int i=0;i<charArray.length;i++)
+     {
+         if(charArray[i]=='e')
+          charArray[i]='i';
+     }
+     String newstr=new String(charArray);
+       System.out.println( newstr);  
+    }
+}
+
+27
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter string:");
+         String email=sc.next();
+         String user="";
+   
+     for(int i=0;i<email.length();i++)
+     {
+         if(email.charAt(i)=='@')
+         {
+             break;
+         }
+         else
+         {
+             user=user+email.charAt(i);
+         }
+           
+    }
+    System.out.println( user);
+}
+}
+OUTPUT
+enter string:
+sfdgssj@ghh.kj
+sfdgssj
+
+28
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+           System.out.println(A.length()+B.length());
+    int output = A.compareTo(B);
+    if(output<0)
+    System.out.println("No");
+    else
+    System.out.println("Yes");
+     System.out.println(A.substring(0,1).toUpperCase()+A.substring(1)+ " " +B.substring(0,1).toUpperCase()+B.substring(1));  
+    }
+}
+
+//INPUT
+hello
+java
+//OUTPUT
+9
+No
+Hello Java
+
+29
+//REVERSING STRING
+class Solution {
+    public void reverseString(char[] s) {
+       
+      int first  = 0;
+       int last = s.length-1;
+
+       while(first<=last){
+        char temp = s[first];
+        s[first] = s[last];
+        s[last] = temp;
+        first++;
+        last--;
+       } 
+
+        
+    }
+}
+
+
+
+30
+//LINEAR SEARCH
+package com.company;
+
+public class Linearsearch {
+    public static void main(String[] args) {
+        int[] nums={4,5,6,7,8,2,-7};
+        int target=-7;
+        int ans=linear( nums,target);
+        System.out.println(ans);
+
+    }
+    static int linear(int[] arr,int target)
+    {
+        if(arr.length==0)
+        {
+            return-1;
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            int ele=arr[i];
+            if(ele==target)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+//OR
+
+package com.company;
+
+public class Linearsearch {
+    public static void main(String[] args) {
+        int[] nums={4,5,6,7,8,2,-7};
+        int target=-7;
+        int ans=linear( nums,target);
+        System.out.println(ans);
+
+    }
+    static int linear(int[] arr,int target)
+    {
+        if(arr.length==0)
+        {
+            return-1;
+        }
+        for(int ele:arr)
+        {
+           if(ele==target)
+            {
+                return ele;
+            }
+        }
+        return -1;
+    }
+}
+//OR
+package com.company;
+
+public class Linearsearch {
+    public static void main(String[] args) {
+        int[] arr={4,5,6,7,8,2,-7};
+        int target=-7;
+        boolean ans=linear(arr,target);
+        System.out.println(ans);
+
+    }
+    static boolean linear(int[] arr,int target)
+    {
+        if(arr.length==0)
+        {
+            return false;
+        }
+        for(int ele:arr)
+        {
+           if(ele==target)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+31
+/STRING SEARCH
+package com.company;
+
+public class Searchstring {
+    public static void main(String[] args) {
+        String name="sharada";
+        char target='a';
+        System.out.println(stringchar(name,target));
+  System.out.println(Arrays.toString(name.toCharArray()))
+    }
+    static boolean stringchar(String str,char target) {
+        if (str.length() == 0)
+            return false;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (target == str.charAt(i)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+//SEARCH AT PARTICULAR INDEX
+package com.company;
+
+public class SearchInrang {
+    public static void main(String[] args) {
+        int[] arr={6,8,9,3,4,2,1};
+         int target=3;
+        System.out.println(serch(arr,target,1,3));
+}
+    static int serch(int[] arr,int target,int start,int end)
+    {
+        if(arr.length==0)
+        {
+            return -1;
+        }
+        for(int i=start;i<=end;i++)
+        {
+            int ele=arr[i];
+            if(ele==target)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+//MIN ELE SEARCH
+package com.company;
+
+public class Findmin {
+    public static void main(String[] args) {
+        int[] arr={34,7,2,1,7,9};
+        System.out.println(min(arr));
+    }
+    static int min(int[] arr)
+    {
+        int ans=arr[0];
+        for(int i=1;i<arr.length;i++)
+        {
+            if(arr[i]<ans)  //for MAX  if(arr[i]>ans)
+            {
+                ans=arr[i];
+            }
+        }
+        return ans;
+    }
+}
+s
+
+32
+//NUM OF EVEN DIGIT CONTAINE IN THE PARTICULAR NUMBER
+package com.company;
+
+public class Search2 {
+    public static void main(String[] args) {
+        int[] nums={1,4,566,8,89,3456,11,70};
+        System.out.println(findnum(nums));
+
+    }
+    static int findnum(int[] nums)
+    {
+        int count=0;
+        for(int num:nums)
+        {
+            if(even(num))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    static boolean even(int num)
+    {
+        int numofdigit=digit(num);
+        return numofdigit%2==0;
+    }
+    static int digit(int num)
+    { if(num<0)
+    {
+        num=num* -1;
+    }
+    if(num==0)
+    {
+        return 1;
+    }
+        int count=0;
+        while(num>0)
+        {
+        count++;
+        num=num/10;
+        }
+        return count;
+    }
+}
+33
+//ENEV OR ODD
+package com.company;
+//Write a program to print whether a number is even or odd, also take input from the user
+import java.util.*;
+public class Evenodd {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        System.out.println("enter a number:");
+        int a=sc.nextInt();
+        if(a%2==0)
+        {
+            System.out.println(" num is even " +a);
+        }
+        else
+        {
+            System.out.println("num is odd " +a);
+        }
+
+    }
+}
+
+34
+package com.company;
+import java.util.*;
+//Take name as input and print a greeting message for that particular name
+public class Greeting {
+    public static void main(String[] args) {
+
+        System.out.println("enter name:");
+        String name="sharada";
+        System.out.println("hello "+name+" how are you");
+    }
+}
+
+35
+package com.company;
+//Write a program to input principal, time, and rate (P, T, R) from the user and find Simple Interest.
+import java.util.*;
+public class Simpleintrest {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter p,t,r value:");
+        float p=sc.nextInt();
+       float t=sc.nextInt();
+        float r=sc.nextInt();
+        float si=(p*t*r)/100;
+        System.out.println(si);
+    }
+
+}
+36
+package com.company;
+import java.util.*;
+//Take in two numbers and an operator (+, -, *, /) and calculate the value. (Use if conditions)
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter 2 numbers:");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        System.out.println("enter operator:");
+       char x=sc.next().charAt(0);// to read a single character from the input
+        int ans;
+        switch(x)
+        {
+            case '+':ans=a+b;
+                System.out.println(ans);
+                break;
+            case '-':ans=a-b;
+                System.out.println(ans);
+                break;
+            case '*': ans=a*b;
+                System.out.println(ans);
+                break;
+            case '/':if(b!=0)
+            {
+                ans=a/b;
+                System.out.println(ans);
+            }
+            else
+            {
+                System.out.println("cont divid");
+            }
+                break;
+            default:
+                System.out.println("invalid input");
+        }
+
+
+    }
+}
+
+37
+package com.company;
+import java.util.*;
+//Take 2 numbers as input and print the largest number.
+public class Largeof2 {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter 2 nums:");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        if(a>b)
+        {
+            System.out.println(a+" a is large ");
+        }
+        else
+        {
+            System.out.println(b+" b is large ");
+        }
+    }
+}
+
+38
+package com.company;
+import java.util.*;
+//Input currency in rupees and output in USD
+public class Rupee {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter currancy in rupees:");
+        float a=sc.nextInt();
+        float b= a*0.012f;
+        System.out.println(b+" :  rupees in usd");
+
+    }
+}
+
+
+
+39
+package com.company;
+import java.util.*;
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter string:");
+        String name=sc.nextLine();
+        int f=0;
+        int l=name.length()-1;
+        String revs="";
+        while(f<=l)
+        {
+            char temp=name.charAt(l);
+            revs=revs+temp;
+            l--;
+        }
+
+      if(name.equals(revs))
+      {
+          System.out.println("yes");
+      }
+      else
+      {
+          System.out.println("no");
+      }
+    }
+}
+40
+package com.company;
+import java.util.*;
+public class Armstrong {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter num:");
+        int a=sc.nextInt();
+        int original=a;
+        int x=0;
+        int sum=0;
+        while(a>0)
+        {
+          x=a%10;
+          sum=sum+(x*x*x);
+          a=a/10;
+        }
+        System.out.println(sum);
+        if(sum==original)
+        {
+            System.out.println("the given number is armstrong number");
+        }
+        else
+        {
+            System.out.println("not");
+        }
+    }
+
+
+}
+41
+//BINEARYSEARCH
+package com.company;
+import java.util.*;
+
+public class Binearsearch2 {
+    public static void main(String[] args) {
+        int[] arr = {-18, -12, -3, 2, 3, 4, 5, 6, 8, 9, 51, 54, 65};
+        int target = 49;
+        int ans = binary(arr, target);
+        System.out.println(ans);
+    }
+
+    static int binary(int[] arr, int target) {
+        int start = 0;
+        int end = arr.length - 1;
+        while (start <= end) {
+            // int mid=(start+end)/2; might be possible that (start+ end) exceds the range of int in java
+            int mid = start + (end - start) / 2;
+            if (target < arr[mid]) {
+                end = mid - 1;
+            } else if (target > arr[mid]) {
+                start = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+}
+42
+// first figure it out if it is in asesending or descending oder.s
+package com.company;
+import java.util.*;
+
+public class Binearsearch2 {
+    public static void main(String[] args) {
+        int[] arr = {-18, -12, -3, 2, 3, 4, 5, 6, 8, 9, 51, 54, 65};
+        int target = 2;
+        int ans = binary(arr, target);
+        System.out.println(ans);
+    }
+
+    static int binary(int[] arr, int target) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        //find whether the array is sorted inascending or desscending order
+        boolean isAsc=arr[start]<arr[end];
+
+
+        while (start <= end) {
+            // int mid=(start+end)/2; might be possible that (start+ end) exceds the range of int in java
+            int mid = start + (end - start) / 2;
+
+            if(arr[mid]==target)
+            {
+                return mid;
+            }
+            if(isAsc)
+            {
+                if (target < arr[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            }
+            else
+            {
+                if (target > arr[mid]) {
+                    end = mid - 1;
+                } else  {
+                    start = mid + 1;
+                }
+            }
+        }
+        return -1;
+    }
+}
+
+
+43
+//CELING
+package com.company;
+import java.util.*;
+
+public class Celing {
+    public static void main(String[] args) {
+        int[] arr = {2,3,5,9,14,16,18};
+        int target = 15;
+        int ans = binary(arr, target);
+        System.out.println(ans);
+    }
+    //return te index of smalled no>=target
+    static int binary(int[] arr, int target) {
+
+        //but what if the arget iis greater than the greatest number in the array
+        if(target>arr[arr.length-1])
+        {
+            return -1;
+        }
+        int start = 0;
+        int end = arr.length - 1;
+
+        //find whether the array is sorted inascending or desscending order
+        boolean isAsc=arr[start]<arr[end];
+
+
+        while (start <= end) {
+            // int mid=(start+end)/2; might be possible that (start+ end) exceds the range of int in java
+            int mid = start + (end - start) / 2;
+
+            if(arr[mid]==target)
+            {
+                return mid;
+            }
+            if(isAsc)
+            {
+                if (target < arr[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            }
+            else
+            {
+                if (target > arr[mid]) {
+                    end = mid - 1;
+                } else  {
+                    start = mid + 1;
+                }
+            }
+        }
+        return start;
+    }
+}
+
+44
+//FLoor
+package com.company;
+import java.util.*;
+
+public class Floor {
+    public static void main(String[] args) {
+        int[] arr = {2,3,5,9,14,16,18};
+        int target = 15;
+        int ans = binary(arr, target);
+        System.out.println(ans);
+    }
+
+    //return the index : greater number<=target
+    static int binary(int[] arr, int target) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        //find whether the array is sorted inascending or desscending order
+        boolean isAsc=arr[start]<arr[end];
+
+
+        while (start <= end) {
+            // int mid=(start+end)/2; might be possible that (start+ end) exceds the range of int in java
+            int mid = start + (end - start) / 2;
+
+            if(arr[mid]==target)
+            {
+                return mid;
+            }
+            if(isAsc)
+            {
+                if (target < arr[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            }
+            else
+            {
+                if (target > arr[mid]) {
+                    end = mid - 1;
+                } else  {
+                    start = mid + 1;
+                }
+            }
+        }
+        return end;
+    }
+}
+
+
+45
+//picking the smallest ele 
+package com.company;
+import java.util.*;
+
+public class Smallestletter {
+    public static void main(String[] args) {
+       char[] arr = {'c','f','j'}; //elements after a are listed and picking small ele n that, here i.e c
+
+       char target = 'a';//if it is 'g' letterrs after j are only j  in that small ele is j.
+      char ans = binary(arr, target);
+        System.out.println(ans);
+    }
+
+    static char binary(char[] letters, char target) {
+
+
+        int start = 0;
+        int end = letters.length - 1;
+
+
+        while (start <= end) {
+            // int mid=(start+end)/2; might be possible that (start+ end) exceds the range of int in java
+            int mid = start + (end - start) / 2;
+
+                if (target < letters[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+
+
+        }
+        return letters[start%letters.length];
+    }
+}
+
+
+46
+//FINDING THE FIRST AND LAST POSITION OF GIVEN ELE
+package com.company;
+
+public class Findfirstandlastposofele {
+    public static void main(String[] args) {
+        int[] arr={2,3,4,5,6,7,7,7};
+        int target=7;
+        Findfirstandlastposofele obj=new Findfirstandlastposofele();
+        int[] res=obj.searchrang(arr,target);
+        System.out.println("first and last occuranc: ["+res[0]+" , "+res[1]+"]");
+
+    }
+    public int[] searchrang(int[] nums,int target)
+    {
+        int[] ans={-1,-1};
+        int start=search(nums,target,true);
+        int end=search(nums,target,false);
+        ans[0]=start;
+        ans[1]=end;
+        return ans;
+    }
+    int search(int[] nums,int target,boolean findstartindex)
+    {
+        int ans=-1;
+        int start=0;
+        int end=nums.length-1;
+        while(start<=end)
+        {
+            int mid=start+(end-start)/2;
+            if(target<nums[mid]){
+                end=mid-1;
+            }
+            else if(target>nums[mid]){
+                start=mid+1;
+            }
+            else
+            {
+                ans=mid;
+                if(findstartindex)
+                {
+                    end=mid-1;
+                }else
+                {
+                    start=mid+1;
+                }
+            }
+        }
+        return ans;
+    }
+
+}
+//OUTPUT
+first and last occuranc: [5 , 7]
+47
+//FACTORIAL
+package com.company;
+import java.util.*;
+public class factorial {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number:");
+        int n=sc.nextInt();
+        int fact=1;
+        int i=1;
+    /*for(int i=1;i<=n;i++)
+    {
+        fact=i*fact;
+    }*/
+
+        do {
+            fact=fact*i;
+            i++;
+        }while(i<=n);
+        System.out.println(fact);
+    }
+}
+48
+package com.company;
+import java.util.*;
+//Calculate Average Of N Numbers
+public class Q3 {
+    public static void main(String[] args) {
+ Scanner sc=new Scanner(System.in);
+        System.out.println("enter nuber:");
+        int n=sc.nextInt();
+        int sum=0;
+        float avg;
+        for(int i=0;i<=n;i++)
+        {
+            sum=sum+i;
+        }
+        avg=sum/n;
+        System.out.println(avg);
+    }
+}
+
+49
+//HASH MAP
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+          HashMap<String, Integer> map = new HashMap<String, Integer>();//    HashMap<String, Integer> map = new HashMap<>();
+        map.put("abc", 10);
+        map.put("dsc", 20);
+        map.put("kjhh", 30);
+        map.put("juyc", 40);
+        map.put("jhfc", 50);
+        System.out.println(map);
+        System.out.println(map.get("abc"));
+        System.out.println("Size of map is: "+ map.size());
+        map.remove("abc");
+        System.out.println(map); 
+  map.put("dsc",1000);
+        System.out.println(map);  
+    }
+}
+//OUTPUT
+{abc=10, juyc=40, dsc=20, jhfc=50, kjhh=30}
+10
+Size of map is: 5
+{juyc=40, dsc=20, jhfc=50, kjhh=30}
+{juyc=40, dsc=1000, jhfc=50, kjhh=30}
+
+50
+//ANAGRAM
+// Java code to check whether two strings 
+// are Anagram or not using HashMap 
+
+import java.util.HashMap;
+
+class GFG {
+    // Function to check whether two strings
+    // are an anagram of each other
+    static boolean areAnagram(String str1, String str2) {
+
+        HashMap<Character, Integer> hmap1
+                = new HashMap<Character, Integer>();
+
+        char arr1[] = str1.toCharArray();
+
+        // Mapping first string
+        for (char c : arr1) {
+            hmap1.put(c, hmap1.getOrDefault(c, 0) + 1);
+        }
+
+        // Removing characters of second string from hashmap
+        for (char c : str2.toCharArray()) {
+            if (!hmap1.containsKey(c)) {
+                return false; // If a character is not found in the hashmap, it's not an anagram
+            }
+            int count = hmap1.get(c);
+            if (count == 1) {
+                hmap1.remove(c); // Remove character if count is 1
+            } else {
+                hmap1.put(c, count - 1); // Decrement count otherwise
+            }
+        }
+
+        // If hashmap is empty, strings are anagrams
+        return hmap1.isEmpty();
+    }
+
+    // Test function
+    public static void test(String str1, String str2) {
+
+        System.out.println("Strings to be checked are:\n"
+                + str1 + "\n" + str2 + "\n");
+
+        // Find the result
+        if (areAnagram(str1, str2))
+            System.out.println("The two strings are "
+                    + "anagrams of each other\n");
+        else
+            System.out.println("The two strings are not"
+                    + " anagrams of each other\n");
+    }
+
+    // Driver program
+    public static void main(String args[]) {
+
+        // Get the Strings
+        String str1 = "geeksforgeeks";
+        String str2 = "forgeeksgeeks";
+
+        // Test the Strings
+        test(str1, str2);
+
+        // Get the Strings
+        str1 = "geeksforgeeks";
+        str2 = "geeks";
+
+        // Test the Strings
+        test(str1, str2);
+    }
+}
+
+//OUTPUT
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+
+Input: s = "rat", t = "car"
+Output: false
+
+51
+//BUBBLE SORT
+package com.company;
+import java.util.*;
+
+public class Bubblesort {
+    public static void main(String[] args) {
+        int[] arr={1,2,3,7,4,8,5,-1,-9};
+        bubblesort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    static void bubblesort(int[] arr) {
+        // run the steps n-1 times
+        for (int i = 0; i < arr.length - 1; i++) {
+            // for each step, max item will come at the last respective index.
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                // swap if the item is smaller than the previous item.
+                if(arr[j] > arr[j + 1]) { // fixed the condition here
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+//OR
+
+package com.company;
+import java.util.*;
+
+public class Bubblesort {
+    public static void main(String[] args) {
+        int[] arr={1,2,3,7,4,8,5,-1,-7};
+        bubblesort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void bubblesort(int[] arr) {
+        // run the steps n-1 times
+        for (int i = 0; i < arr.length - 1; i++) {
+            // for each step, max item will come at the last respective index.
+            for (int j = 1; j < arr.length - i; j++) { // fixed the starting index here
+                // swap if the item is smaller than the previous item.
+                if(arr[j] < arr[j - 1]) { // fixed the condition here
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+
+52
+//SELECTION SORT
+package com.company;
+import java.util.*;
+
+import java.util.Arrays;
+public class Selectionsort {
+    public static void main(String[] args) {
+int[] arr={3,1,4,2,-9,-76};
+        selection(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+  static void swap(int[] arr,int first,int second)
+  {
+      int temp=arr[first];
+      arr[first]=arr[second];
+      arr[second]=temp;
+  }
+    static void selection(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            //find maximum element in the array and place in correct position
+            int last = arr.length - i - 1;
+            int maxindex = getmaxindex(arr, 0, last);
+            swap(arr,maxindex,last);
+        }
+    }
+        private static int getmaxindex(int[] arr,int start,int end)
+        {
+            int max=start ;
+            for(int i=0;i<end;i++)
+            {
+                if(arr[max]<arr[i])
+                {
+                    max=i;
+                }
+            }
+            return max;
+        }
+    }
+
+53
+//INSERTIONSORT
+package com.company;
+import java.util.*;
+public class Iserationsort {
+    public static void main(String[] args) {
+        int[] arr={5,3,1,2,-3,-76,-2};
+        insertion(arr);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    static void swap(int[] arr,int first,int second)
+    {
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+    static void insertion(int[] arr)
+    {
+        for(int i=0;i<arr.length-1;i++)
+        {
+            for(int j=i+1;j>0;j--)
+            {
+                if(arr[j]<arr[j-1])
+                {
+                    swap(arr,j,j-1);
+                }else
+                {
+                    break;
+                }
+            }
+        }
+    }
+
+}
+54
+//CYCLIC SORT
+package com.company;
+import java.util.*;
+public class Cyclicsort {
+    public static void main(String[] args) {
+        int[] arr={3,5,2,1,4};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    static void sort(int[] arr)
+    {
+        int i=0;
+        while(i<arr.length){
+            int correct=arr[i]-1;//correct index is elelment at index mius one(ele-1(
+            if(arr[i]!=arr[correct]) {
+                swap(arr, i, correct);
+
+            }
+                else
+                {
+                    i++;
+                }
+            }
+        }
+
+    static void swap(int[] arr,int first,int second)
+    {
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+}
+//te above code applicabel in "https://leetcode.com/problems/missing-number/description/"
+
+package com.company;
+
+import java.util.Arrays;
+
+
+public class Missingnumber {
+    public static void main(String[] args) {
+        int[] arr={3,5,2,1,4};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+        ans(arr);
+    }
+    //case 1:
+    //missing number in array
+    //1.first sort aray using cyclic sort (0 to n)
+    //2.its starting from 0 to n means index=elemenet.
+    //3.to find elemet ,check all the index that is not having required number at required index.
+    //4.that particula index in the value.
+
+    //case 2;
+    //whene ndex not there in arry
+    //ex n=4 arr={0,1,2,3}  ans=4.
+  static void sort(int[] arr)
+    {
+        int i=0;
+        while(i<arr.length){
+            int correct=arr[i];//correct index is elelment at index mius one(ele-1(
+            if(arr[i]<arr.length&&arr[i]!=arr[correct]) {
+                swap(arr, i, correct);
+
+            }
+            else
+            {
+                i++;
+            }
+        }
+    }
+    static int ans(int[] arr)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]!=i)
+            {
+                return arr[i];
+            }
+
+        }
+      return arr.length;
+    }
+
+    static void swap(int[] arr,int first,int second)
+    {
+        int temp=arr[first];
+        arr[first]=arr[second];
+        arr[second]=temp;
+    }
+
+}
+//case 1:
+    //missing number in array
+    //1.first sort aray using cyclic sort (0 to n)
+    //2.its starting from 0 to n means index=elemenet.
+    //3.to find elemet ,check all the index that is not having required number at required index.
+    //4.that particula index in the value.
+
+    //case 2;
+    //whene ndex not there in arry
+    //ex n=4 arr={0,1,2,3}  ans=4.
+//OR
+package com.company;
+import java.util.Arrays;
+
+public class Missingnumber {
+    public static void main(String[] args) {
+        int[] arr = {4, 0, 2, 1};
+        sort(arr);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(ans(arr));
+    }
+
+    // Sorts the array using cyclic sort
+    public static void sort(int[] arr) {
+        int i = 0;
+        while (i < arr.length) {
+            int correct = arr[i]; // correct index is element itself
+            if (arr[i] < arr.length && arr[i] != arr[correct]) {
+                swap(arr, i, correct);
+            } else {
+                i++;
+            }
+        }
+    }
+
+    // Finds the missing number in the array
+    static int ans(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != i) {
+                return i;
+            }
+        }
+        return arr.length; // If all elements are present, return the size of the array
+    }
+
+    // Swaps two elements in the array
+    static void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
+54
+package com.company;
+//https://leetcode.com/problems/find-the-duplicate-number/description/
+import java.util.*;
+
+ class Findduplicates {
+    public static void main(String[] args) {
+        int[] arr = {4, 0, 2, 1,1};
+        find(arr);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    public static int find(int[] arr)
+    {
+        int i = 0;
+        while (i < arr.length) {
+            if(arr[i]!=i+1)
+            {
+                int correct = arr[i]-1; // correct index is element itself
+                if (arr[i] < arr.length && arr[i] != arr[correct]) {
+                    swap(arr, i, correct);
+                } else {
+                    return arr[i];
+                }
+            }else
+            {
+                i++;
+            }
+
+        }
+        return -1;
+    }
+    static void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
+
+package com.company;
+import java.util.*;
+//https://leetcode.com/problems/find-all-duplicates-in-an-array/description/
+public class Findallduplicates {
+    public static void main(String[] args) {
+
+    }
+    public List<Integer> find(int[] arr)
+    {
+        int i = 0;
+        while (i < arr.length) {
+            int correct = arr[i] - 1;
+                // correct index is element itself
+                if (arr[i] != arr[correct]) {
+                    swap(arr, i, correct);
+                } else {
+                    i++;
+                }
+        }
+        List<Integer> ans=new ArrayList<>();
+
+                for(int index=0;index<arr.length;index++)
+                {
+                    if(arr[index]!=index+1)
+                    {
+                        ans.add(arr[index]);
+                    }
+                }
+
+            return ans;
+
+    }
+    static void swap(int[] arr, int first, int second) {
+        int temp = arr[first];
+        arr[first] = arr[second];
+        arr[second] = temp;
+    }
+}
+
+//55
+package com.company;
+
+public class Pattern {
+    public static void main(String[] args) {
+        int n=5;
+        pattern(n);
+        pattern2(n);
+        pattern3(n);
+        pattern4(n);
+        pattern5(n);
+    }
+    static void pattern(int n)
+    {
+        for(int row=1;row<=n;row++)
+        {
+            //for every row, run the col
+            for(int col=1;col<=row;col++)
+            {
+                System.out.print("* ");
+            }
+            //when one row is printed we have to add new line.
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+
+    static void pattern2(int n)
+    {
+        for(int row=1;row<=n;row++)
+        {
+            //for every row, run the col
+            for(int col=1;col<=n;col++)
+            {
+                System.out.print("* ");
+            }
+            //when one row is printed we have to add new line.
+            System.out.println();
+        }
+        System.out.println();
+
+    }
+
+    static void pattern3(int n)
+    {
+        for(int row=1;row<=n;row++)
+        {
+            //for every row, run the col
+            for(int col=1;col<=(5-row+1);col++)//5=n.
+            {
+                System.out.print("* ");
+            }
+            //when one row is printed we have to add new line.
+            System.out.println();
+        }
+        System.out.println();
+
+    }
+    static void pattern4(int n)
+    {
+        for(int row=1;row<=n;row++)
+        {
+            //for every row, run the col
+            for(int col=1;col<=row;col++)
+            {
+                System.out.print(col +" ");
+            }
+            //when one row is printed we have to add new line.
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    static void pattern5(int n)
+    {
+        for(int row=0;row<(2*n);row++)//   for(int row=1;row<=(2*n-1);row++)
+        {
+           int totalcolsinrow=row>n?2*n-row:row;
+            for(int col=0;col<totalcolsinrow;col++)
+            {
+                System.out.print("* ");
+            }
+            //when one row is printed we have to add new line.
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+
+}
+
+
+//OUTPUT
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+54
+//QUICK SORT
+package com.company;
+import java.util.*;
+public class Quicksort {
+    public static void main(String[] args) {
+int[] arr={5,4,3,2,1};
+        sort(arr,0,arr.length-1);
+        System.out.println(Arrays.toString(arr));
+
+    }
+    static void sort(int[] nums,int low,int hi)
+    {
+        if(low>=hi)
+        {
+            return;
+        }
+        int s=low;
+        int e=hi;
+        int m=s+(e-s)/2;//mid
+        int pivot=nums[m];
+
+        while(s<=e)
+        {
+            //also a reason why if its already sorted it wil not swap
+            while(nums[s]<pivot)
+            {
+               s++;
+            }
+            while(nums[e]>pivot)
+            {
+                e--;
+            }
+            if(s<=e)
+            {
+            int temp=nums[s];
+            nums[s]=nums[e];
+            nums[e]=temp;
+            s++;
+            e--;
+            }
+        }
+        sort(nums,low,e);
+        sort(nums,s,hi);
+    }
+}
